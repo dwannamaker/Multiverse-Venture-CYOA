@@ -1,0 +1,26 @@
+{
+  "name": "multiverse-venture-cyoa",
+  "version": "1.0.0",
+  "description": "A choose your own adventure project ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwannamaker/Multiverse-Venture-CYOA.git"
+  },
+  "author": "Dylan Wannamaker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dwannamaker/Multiverse-Venture-CYOA/issues"
+  },
+  "homepage": "https://github.com/dwannamaker/Multiverse-Venture-CYOA#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.10.11"
+  }
+}
