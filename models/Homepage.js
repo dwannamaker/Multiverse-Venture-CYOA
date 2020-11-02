@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const homepageSchema = new mongoose.Schema (
     {
-        title: {},
-        body: {},
+        title: { type: String, required: true },
+        body: { type: String, required: true },
     },
 );
 
