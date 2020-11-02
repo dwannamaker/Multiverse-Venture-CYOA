@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
-const storySchema = new mongoose.Schema (
+const homepageSchema = new mongoose.Schema (
     {
         title: { type: String, required: true },
         body: { type: String, required: true },
     },
 );
 
-const Story = mongoose.model("Story", storySchema);
+const Homepage = mongoose.model("Homepage", homepageSchema);
 
-module.exports = Story;
+module.exports = Homepage;
