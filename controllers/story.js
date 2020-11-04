@@ -4,7 +4,7 @@ const router = express.Router();
 const db = require("../models");
 
 
-// base route is /stories
+// Base Route is /stories
 
 // Index
 router.get("/", function (req, res) {
@@ -36,23 +36,23 @@ router.get("/", function (req, res) {
 // Create
 router.post("/", async function (req, res) {
     console.log(req.body);
-    db.Story.create(req.body, function (err, createdStory) {
-      if (err) {
-        console.log(err);
-        return res.send(err);
-      }
-      db.User.findById(req.session.currentUser.id, function (err, foundUser) {
-        if (err) {
-          console.log(err);
-          return res.send(err);
-        }
+//     db.Story.create(req.body, function (err, createdStory) {
+//       if (err) {
+//         console.log(err);
+//         return res.send(err);
+//       }
+//       db.User.findById(req.session.currentUser.id, function (err, foundUser) {
+//         if (err) {
+//           console.log(err);
+//           return res.send(err);
+//         }
   
-        foundUser.stories.push(createdStory);
-        foundUser.save(); 
+//         foundUser.stories.push(createdStory);
+//         foundUser.save(); 
   
-        res.redirect("/stories");
-      });
-    });
+//         res.redirect("/stories");
+//       });
+//     });
 
     try {
         const createdStory = await db.Story.create(req.body);
