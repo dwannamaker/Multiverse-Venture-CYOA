@@ -7,19 +7,19 @@
           </head>
           <body>
             <nav>
-              <h1>Welcome to Storytime</h1>
+              <h1>Welcome to the Story Library</h1>
               <ul>
-                <li>
+                <!-- <li>
                     <a href="/register">Register</a>
                 </li>
                 <li>
                     <a href="/login">Login</a>
+                </li> -->
+                <li>
+                  <a href="/">Home</a>
                 </li>
                 <li>
-                  <a href="/user">Users</a>
-                </li>
-                <li>
-                  <a href="/story">Stories</a>
+                  <a href="/user">User Contributions</a>
                 </li>
                 <li>
                   <a href="/story/new">Add a New Story</a>
@@ -28,19 +28,19 @@
             </nav>
         
             <main>
-              <h2>List of Stories</h2>
+              <h2>Current Story Catalog</h2>
 
               <% console.log("stories", stories.length) %>
               <% if(stories.length === 0) { %>
                   <p>No stories...yet!</p>
               <% } %> 
-              <!-- <ul>
-                <# storys.forEach(story => { %>
+              <ul>
+                <% stories.forEach(story => { %>
                 <li>
-                  <a href="/story/<#= story._id %>"> <#= story.title %> </a>
+                  <a href="/story/<%= story._id %>"> <%= story.title %> </a>
                 </li>
-                <# }) %>
-              </ul> -->
+                <% }) %>
+              </ul> 
 <!--         
               <# if(story.length === 0) { %>
               <p>There are no stories available yet. Check back soon or add one yourself!</p>

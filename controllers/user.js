@@ -5,10 +5,10 @@ const router = express.Router();
 const { User, Story } = require("../models");
 
 
-// Base Route is /users
+// Base Route is /user
 
 
-// Index View /users
+// Index View /user
 router.get("/", async function (req, res) {
   // mongoose code
   // db.User.find({}, function (error, foundUsers) {
@@ -124,7 +124,7 @@ router.delete("/:id", function (req, res) {
         console.log(err);
         return res.send(err);
       }
-      res.redirect("/users");
+      res.redirect("/user");
     });
   });
 });

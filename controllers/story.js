@@ -56,7 +56,7 @@ router.post("/", async function (req, res) {
 //         foundUser.stories.push(createdStory);
 //         foundUser.save(); 
   
-//         res.redirect("/stories");
+//         res.redirect("/story");
 //       });
 //     });
 
@@ -103,7 +103,7 @@ router.get("/:id/edit", function (req, res) {
   
 
 // Update
-router.put("s:id", function (req, res) {
+router.put("/:id", function (req, res) {
     db.Story.findByIdAndUpdate(
       req.params.id,
       req.body,
@@ -113,7 +113,7 @@ router.put("s:id", function (req, res) {
           console.log(err);
           return res.send(err);
         }
-        res.redirect(`/stories/${updatedStory._id}`);
+        res.redirect(`/story/${updatedStory._id}`);
       }
     );
   });
@@ -121,23 +121,31 @@ router.put("s:id", function (req, res) {
 
 // Delete
 router.delete("/:id", function (req, res) {
-    db.story.findByIdAndDelete(req.params.id, function (err, deletedStory) {
+    db.Story.findByIdAndDelete(req.params.id, function (err, deletedStory) {
       if (err) {
         console.log(err);
         return res.send(err);
       }
   
-      db.User.findById(deletedStory.user, function (err, foundUser) {
+      console.log("Deleted Story!", deletedStory)
+
+/*       db.User.findById( { user: deletedUser._id }, function (err, foundUser) {
+        
         if (err) {
           console.log(err);
           return res.send(err);
         }
   
-        foundUser.stories.remove(deletedStory);
-        foundUser.save();
+        // console.log("Found User!", foundUser)
+        console.log("Deleted Story!", deletedStory.user)
+
+        // foundUser.story.remove(deletedStory);
+        // foundUser.save();
   
-        res.redirect("/stories");
-      });
+        res.redirect("/story");
+      }); */
+      res.redirect("/story");
+
     });
   });
 
