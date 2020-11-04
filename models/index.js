@@ -22,7 +22,7 @@ mongoose.connection.on("disconnect", function (event) {
 });
 
 module.exports = {
-  Homepage: require("./Homepage"),
+  // Homepage: require("./Homepage"),
   Story: require("./Story"),
   User: require("./User"),
 };

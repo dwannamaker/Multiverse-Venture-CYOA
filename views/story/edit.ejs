@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Story</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Story Library</h1>
+      <ul>
+        <li>
+          <a href="/user">User Contributions</a>
+        </li>
+        <li>
+          <a href="/story">Stories</a>
+        </li>
+        <li>
+          <a href="/story/new">Add a New Story</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <h2>Edit <%= story.title %></h2>
+      <form action="/story/<%= story._id %>?_method=PUT" method="POST">
+        <p>
+          <input
+            type="text"
+            name="title"
+            placeholder="Title"
+            value="<%= story.title %>"
+          />
+        </p>
+        <p>
+          <textarea type="text" name="body" placeholder="Body">
+<%= story.body %></textarea
+          >
+        </p>
+        <input type="submit" value="Update Story" />
+      </form>
+    </main>
+  </body>
+</html>
