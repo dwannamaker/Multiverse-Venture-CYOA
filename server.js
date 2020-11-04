@@ -11,6 +11,8 @@ const cors = require("cors");
 // logging
 const morgan = require("mongoose-morgan");
 
+const authRequired = require("./middleware/authRequired");
+
 /* Internal Modules */
 const controllers = require("./controllers");
 
@@ -76,12 +78,12 @@ app.use(helmet()); // headers protection
 
 app.use(mongoSanitize()); // cleans data to prevent database injection
 
-const authRequired = function (req, res, next) {
-  if (!req.session.currentUser) {
-    return res.redirect("/login");
-  }
-  next();
-};
+// const authRequired = function (req, res, next) {
+//   if (!req.session.currentUser) {
+//     return res.redirect("/login");
+//   }
+//   next();
+// };
 
 // middleware to add user to all ejs views
 app.use(function (req, res, next) {
@@ -97,19 +99,19 @@ app.get("/", function (req, res) {
   res.render("index");
 });
 
-/*
+
 // Auth Routes
 
 app.use("/", controllers.auth);
 
 // Author Routes
 
-app.use("/authors", authRequired, controllers.author);
+// app.use("/authors", authRequired, controllers.author);
 
-// Article Routes
+// Story Routes
 
-app.use("/articles", authRequired, controllers.article);
- */
+app.use("/story", authRequired, controllers.story);
+
 
 /* Server Listener */
 app.listen(PORT, function () {
