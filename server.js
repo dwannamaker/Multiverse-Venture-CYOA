@@ -104,13 +104,14 @@ app.get("/", function (req, res) {
 
 app.use("/", controllers.auth);
 
-// Author Routes
+// User Routes
 
-// app.use("/authors", authRequired, controllers.author);
+// app.use("/users", authRequired, controllers.user);
 
 // Story Routes
 
 app.use("/story", authRequired, controllers.story);
+app.use("/user", authRequired, controllers.story);
 
 
 /* Server Listener */

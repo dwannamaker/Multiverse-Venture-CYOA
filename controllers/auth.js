@@ -27,7 +27,8 @@ router.post("/register", async function(req, res) {
         const hash = await bcrypt.hash(req.body.password, salt);
         req.body.password = hash;
         // create user with req.body and hashed password
-        await db.User.create(req.body);
+        const createUser = await db.User.create(req.body);
+        console.log("Created a User", createUser);
 
         // redirect to login
         res.redirect("/login");
@@ -61,6 +62,9 @@ router.post("/login", async function(req, res) {
             username: foundUser.username,
             id: foundUser._id,
         }
+
+        console.log("Found User", foundUser);
+
 
         // redirect to home
         res.redirect("/")

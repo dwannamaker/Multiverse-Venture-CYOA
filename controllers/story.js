@@ -4,13 +4,13 @@ const router = express.Router();
 const db = require("../models");
 
 
-// Base Route is /stories
+// Base Route is /story
 
 // Index
 router.get("/", function (req, res) {
-    db.Story.find({}, function (error, foundStorys) {
+    db.Story.find({}, function (error, foundStories) {
       if (error) return res.send(error);
-  
+      console.log("Found Stories", foundStories);
       const context = {
         stories: foundStories,
       };
@@ -20,22 +20,28 @@ router.get("/", function (req, res) {
   });
   
   // New
-  router.get("/new", function (req, res) {
-    db.User.find({}, function (err, foundUsers) {
-      if (err) return res.send(err);
+  router.get('/new', (req, res) => {
+    // res.send("New this, New that, New now functional")
+    res.render('story/new.ejs')
+  })
+
+
+  // router.get("/new", function (req, res) {
+  //   db.User.find({}, function (err, foundUsers) {
+  //     if (err) return res.send(err);
   
-      const context = {
-        users: foundUsers,
-      };
+  //     const context = {
+  //       users: foundUsers,
+  //     };
   
-      res.render("story/new", context);
-    });
-  });
+  //     res.render("story/new", context);
+  //   });
+  // });
 
 
 // Create
 router.post("/", async function (req, res) {
-    console.log(req.body);
+    console.log("req.body functional", req.body);
 //     db.Story.create(req.body, function (err, createdStory) {
 //       if (err) {
 //         console.log(err);
@@ -58,10 +64,11 @@ router.post("/", async function (req, res) {
         const createdStory = await db.Story.create(req.body);
         const foundUser = await db.User.findById(req.body.user);
     
-        foundUser.stories.push(createdStory);
-        await foundUser.save();
+        // foundUser.stories.push(createdStory);
+        // await foundUser.save();
+        console.log("Found user");
     
-        res.redirect("/stories");
+        res.redirect("/story");
       } catch (error) {
         console.log(error);
         res.send({ message: "Internal server error" });

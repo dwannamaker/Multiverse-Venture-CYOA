@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Story</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Welcome to Storytime</h1>
+      <ul>
+        <li>
+          <a href="/user">Users</a>
+        </li>
+        <li>
+          <a href="/story">Stories</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <form action="/story" method="POST">
+        <p>
+          <input type="text" name="title" placeholder="Title" />
+        </p>
+        <p>
+          <textarea type="text" name="body" placeholder="Body"></textarea>
+        </p>
+
+
+        <input type="submit" value="Create Story" />
+      </form>
+    </main>
+  </body>
+</html>

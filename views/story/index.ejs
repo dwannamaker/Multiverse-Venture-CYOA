@@ -1,0 +1,51 @@
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Storytime | Stories</title>
+          </head>
+          <body>
+            <nav>
+              <h1>Welcome to Storytime</h1>
+              <ul>
+                <li>
+                    <a href="/register">Register</a>
+                </li>
+                <li>
+                    <a href="/login">Login</a>
+                </li>
+                <li>
+                  <a href="/user">Users</a>
+                </li>
+                <li>
+                  <a href="/story">Stories</a>
+                </li>
+                <li>
+                  <a href="/story/new">Add a New Story</a>
+                </li>
+              </ul>
+            </nav>
+        
+            <main>
+              <h2>List of Stories</h2>
+
+              <% console.log("stories", stories.length) %>
+              <% if(stories.length === 0) { %>
+                  <p>No stories...yet!</p>
+              <% } %> 
+              <!-- <ul>
+                <# storys.forEach(story => { %>
+                <li>
+                  <a href="/story/<#= story._id %>"> <#= story.title %> </a>
+                </li>
+                <# }) %>
+              </ul> -->
+<!--         
+              <# if(story.length === 0) { %>
+              <p>There are no stories available yet. Check back soon or add one yourself!</p>
+              <# } %> -->
+            </main>
+          </body>
+        </html>
+        
