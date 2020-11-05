@@ -1,0 +1,36 @@
+<head>
+  <%- include('../partials/header') %>
+            <title>Storytime | Stories</title>
+          </head>
+          <body>
+            <nav>
+              <a href="/"> <- Home </a>
+                  <br> <br> <br>
+              <h1>Welcome to the Library</h1> 
+              <ul>
+                  <a href="/story/new">Add a New Story</a> <br><br>
+              </ul>
+            </nav>
+        
+            <main>
+              <h2>Current Short Story Catalog:</h2>
+
+              <% console.log("stories", stories.length) %>
+              <% if(stories.length === 0) { %>
+                  <p>No stories...yet!</p>
+              <% } %> 
+              <ul>
+                <% stories.forEach(story => { %>
+                <li>
+                  <a href="/story/<%= story._id %>"> <%= story.title %> </a>
+                </li>
+                <% }) %>
+              </ul> 
+<!--         
+              <# if(story.length === 0) { %>
+              <p>There are no stories available yet. Check back soon or add one yourself!</p>
+              <# } %> -->
+            </main>
+          </body>
+        </html>
+        
