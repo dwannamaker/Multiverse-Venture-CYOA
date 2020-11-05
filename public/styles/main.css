@@ -1,10 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
+
+
 body {
-    background-image: url("/Users/admin/Desktop/GA-SEI/4_deliverables/projects/individual_projects/Multiverse-Venture-CYOA/public/images/321a2780485bc976836c488b1c2e9439.jpg");
+    background-image: url("/images/321a2780485bc976836c488b1c2e9439.jpg");
     background-attachment: fixed;
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5em;
-    color: rgba(238, 236, 236, 0.714);
+    color: black;
     font-weight: 400;
   }
   

@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/header') %>
     <title>Login</title>
 </head>
 <li>
-    <a href="/">Home</a>
+    <a href="/"> <- Home </a>
 </li>
 <body>
-    <h1>Welcome</h1>
+    <h1>Welcome Back!</h1>
     <form action="/login" method="POST">
         <input type="text" name="username" placeholder="Username" required />
-        <input type="password" name="password" placeholder="Password" required />
+        <input type="password" name="password" placeholder="Password" required /> <br>
         <input type="submit" value="Login">
     </form>
 </body>
@@ -25,9 +22,9 @@
     /*add full-width input fields*/
     input[type=text],
     input[type=password] {
-        width: 100%;
+        width: 50%;
         padding: 12px 20px;
-        margin: 8px 0;
+        margin: 8px 10px;
         display: inline-block;
         border: 2px solid #ccc;
         box-sizing: border-box;
@@ -37,7 +34,7 @@
         background-color: green;
         color: white;
         padding: 14px 20px;
-        margin: 8px 0;
+        margin: 8px 10px;
         cursor: pointer;
         width: 100%;
     }

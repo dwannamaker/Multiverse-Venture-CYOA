@@ -1,5 +1,6 @@
 /* External Modules */
 const express = require("express");
+const path = require("path");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
@@ -55,6 +56,7 @@ app.use(
 
 /* middleware */
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
 app.use(
   session({
