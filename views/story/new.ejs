@@ -1,26 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <%- include('../partials/header') %>
     <title>Create Story</title>
   </head>
-  <body>
+  <body class="new-story-background">
     <nav>
       <h1>Create a New Story</h1>
       <ul>
-        <li>
+        <!-- <li>
           <a href="/user">User Contributions</a>
-        </li>
+        </li> -->
         <li>
-          <a href="/story">Back to the Library</a>
+          <a href="/story"> <- Back to the Library </a>
         </li>
       </ul>
     </nav>
     <main>
       <form action="/story" method="POST">
         <p>
+          <input type="text" name="img" placeholder="Image Here"/>
+      </p>
+        <p>
           <input type="text" name="title" placeholder="Title" />
+        </p>
+        <p>
+          <input type="text" name="author" placeholder="Author" />
         </p>
         <p>
           <textarea type="text" name="body" placeholder="Body"></textarea>

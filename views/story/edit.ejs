@@ -1,27 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <%- include('../partials/header') %>
     <title>Edit Story</title>
   </head>
   <body>
+    <a href="/story"> <- Back to the Library </a> <br><br>
     <nav>
-      <h1>Story Library</h1>
+      <h1> Edit the story, "<%= story.title %>" </h1>
       <ul>
-        <li>
-          <a href="/user">User Contributions</a>
-        </li>
-        <li>
-          <a href="/story">Stories</a>
-        </li>
-        <li>
-          <a href="/story/new">Add a New Story</a>
-        </li>
+
       </ul>
     </nav>
     <main>
-      <h2>Edit <%= story.title %></h2>
+      <h2></h2>
       <form action="/story/<%= story._id %>?_method=PUT" method="POST">
         <p>
           <input
@@ -30,7 +20,7 @@
             placeholder="Title"
             value="<%= story.title %>"
           />
-        </p>
+        </p> <br>
         <p>
           <textarea type="text" name="body" placeholder="Body">
 <%= story.body %></textarea
