@@ -3,17 +3,18 @@
     <title>Register</title>
 </head>
 <li>
-    <a href="/"> <- Home </a>
+    <!-- <a href="/"> <- Home </a> -->
 </li>
-<body>
-    <h1>Register to Access</h1>
+<body><br><br><br>
+    <h1>Register to Access the Library</h1><br>
     <form action="/register" method="POST">
-        <input type="text" name="username" placeholder="Username" required /> <br> <br>
-        <input type="email" name="email" placeholder="Email" required /> <br> <br>
+        <input type="text" name="username" placeholder="Username" required /> <br> 
+        <input type="email" name="email" placeholder="Email" required /> <br> 
         <input type="password" name="password" placeholder="Password" required /><br> <br>
-        <input type="submit" value="Register">
+        <button>
+            <input type="submit" value="Register">
+        </button>
     </form>
-
     <style>
     
         /*add full-width input fields*/
@@ -29,12 +30,12 @@
         }
         /* set a style for all buttons*/
         button {
-            background-color: green;
+            background-color: transparent;
             color: white;
             padding: 14px 20px;
             margin: 8px 10px;
             cursor: pointer;
-            width: 100%;
+            width: 15%;
         }
         /*set styles for the cancel button*/
         .cancelbtn {

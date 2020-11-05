@@ -3,26 +3,26 @@
     <title>Show</title>
   </head>
   <body>
-    <a href="/story"> <- Back to the Library </a> <br><br>
+    <!-- <a href="/story"> <- Back to the Library </a> --> 
+    <br><br><br>
     <nav>
-      <h1>Welcome to Storytime</h1> <br>
-      <ul>
-        <a href="/story/new">Add a New Story</a> <br><br>
-      </ul>
+      <!-- <h1>Welcome to Storytime</h1>  -->
+  <br>
     </nav>
     <main>
       <section>
-        <h2>Story Data</h2>
+        <h2><%= story.title %></h2>
         <ul>
-          Title: <%= story.title %> <br> <br>
+           <br> <br>
 
-          Body: <%= story.body %>
+          <%= story.body %>
         </ul>
-        <!-- <a href="/story/<%= story._id %>/edit">[ Edit ]</a> -->
+        <!-- <a href="/story/<#= story._id %>/edit">[ Edit ]</a> -->
       </section>
       <form action="/story/<%= story._id %>/edit?_method=EDIT" method="EDIT">
         <input type="submit" value="Edit" />
-
+      </form>
+      <br>
       <form action="/story/<%= story._id %>?_method=DELETE" method="POST">
         <input type="submit" value="Delete" />
       </form>

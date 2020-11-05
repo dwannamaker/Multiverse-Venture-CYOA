@@ -3,14 +3,16 @@
     <title>Login</title>
 </head>
 <li>
-    <a href="/"> <- Home </a>
+    <!-- <a href="/"> <- Home </a> -->
 </li>
-<body>
-    <h1>Welcome Back!</h1>
+<body> <br><br><br>
+    <h1>Welcome Back</h1><br>
     <form action="/login" method="POST">
         <input type="text" name="username" placeholder="Username" required />
         <input type="password" name="password" placeholder="Password" required /> <br>
-        <input type="submit" value="Login">
+        <button>
+            <input type="submit" value="Login">
+        </button>
     </form>
 </body>
 </html>
@@ -31,12 +33,12 @@
     }
     /* set a style for all buttons*/
     button {
-        background-color: green;
+        background-color: transparent;
         color: white;
         padding: 14px 20px;
         margin: 8px 10px;
         cursor: pointer;
-        width: 100%;
+        width: 15%;
     }
     /*set styles for the cancel button*/
     .cancelbtn {
